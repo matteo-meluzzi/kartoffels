@@ -5,11 +5,6 @@ MEMORY {
 SECTIONS {
     . = ORIGIN(ram);
 
-    .stack : {
-        . += 4096;
-        _stack_end = .;
-    } > ram
-
     .text : {
         KEEP(*(.init))
         *(.text .text.*)
@@ -21,8 +16,6 @@ SECTIONS {
         *(.sbss .sbss.*)
         *(.eh_frame)
     } > ram
-
-    _heap_start = .;
+    
+    _stack_end = ORIGIN(ram) + LENGTH(ram) - 16;
 }
-
-_heap_end = ORIGIN(ram) + LENGTH(ram) - 1;

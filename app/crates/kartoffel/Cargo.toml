@@ -10,5 +10,3 @@ default = ["serial-panic"]
 serial-panic = []
 
 [dependencies]
-spin.workspace = true
-talc.workspace = true

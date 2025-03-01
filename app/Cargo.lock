@@ -1970,10 +1970,6 @@ dependencies = [
 [[package]]
 name = "kartoffel"
 version = "0.7.0"
-dependencies = [
- "spin",
- "talc",
-]
 
 [[package]]
 name = "kartoffels"
